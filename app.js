@@ -1,26 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// const parent = React.createElement(
-//     'div',
-//     {id:'parent'},
-//     React.createElement(
-//         'div',
-//         {id:'child'},
-//     [React.createElement('h1',{},"I am an h1 tag"),React.createElement('h2',{},"I am an h2 tag")]
-// ),React.createElement("div",{id:"child2"},[React.createElement("h1",{},"I am an h1 tag"),React.createElement("h2",{},"I am an h2 tag")]
-// ));
+const heading = <h1> Hello this is sailesh unique !</h1>;
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(parent);
+//  React Functional Component 
 
-// React.createElement => Object => HTMLElement(render)
+const HeadingComponent = () => <h2> This is a react functional component ! </h2>
 
-const heading = React.createElement("h1",{id:"heading"},"Namaste React");
+const HeadingComponent2 = () => {
+    return (
+        <div>
+            <h1>This is a react functional component with a return statement</h1>
+            {heading}
+            {HeadingComponent()}
+            <p>This is a paragraph</p>
+        </div>
+    )
+}
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(heading);
 
-// JSX
 
-const jsxHeading = <h1>This is the jsx heading</h1>
-root.render(jsxHeading);
-console.log(jsxHeading);
+// root.render(<HeadingComponent />);
+root.render(<HeadingComponent2 />);
